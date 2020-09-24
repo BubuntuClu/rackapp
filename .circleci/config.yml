@@ -18,8 +18,8 @@ jobs:
 
       #Run rspec
       - run:
-        name: RSpec
-        command: rspec spec
+          name: RSpec
+          command: rspec spec
 
   # rubocop:
   #   parameters:
