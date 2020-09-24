@@ -21,13 +21,7 @@ jobs:
           name: RSpec
           command: bundle exec rspec spec
 
-  # rubocop:
-  #   parameters:
-  #     ruby:
-  #       type: string
-  #   docker:
-  #     - image: circleci/ruby:2.6.1-stretch-node
-  #   steps:
-  #     - checkout
-  #     - run: bundle install
-  #     - run: rubocop
+      #Run rubocop
+      - run:
+          name: Rubocop
+          command: rubocop
