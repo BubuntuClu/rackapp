@@ -1,7 +1,6 @@
 version: 2.1
 orbs:
   ruby: circleci/ruby@0.1.2
-  rubocop: hanachin/rubocop@0.0.6
 
 jobs:
   build:
@@ -10,13 +9,25 @@ jobs:
     executor: ruby/default
     steps:
       - checkout
+
+      #install bundler
       - run:
           name: install bundler
           command: gem install bundler
       - ruby/bundle-install
 
-workflows:
-  test:
-    jobs:
-      - rubocop/rubocop
-  version: 2
+      #Run rspec
+      - run:
+        name: RSpec
+        command: rspec spec
+
+  # rubocop:
+  #   parameters:
+  #     ruby:
+  #       type: string
+  #   docker:
+  #     - image: circleci/ruby:2.6.1-stretch-node
+  #   steps:
+  #     - checkout
+  #     - run: bundle install
+  #     - run: rubocop
