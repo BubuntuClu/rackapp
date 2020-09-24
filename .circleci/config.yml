@@ -13,3 +13,25 @@ jobs:
           name: install bundler
           command: gem install bundler
       - ruby/bundle-install
+
+  rspec:
+    parameters:
+      ruby:
+        type: string
+    docker:
+      - image: circleci/ruby:2.6.1-stretch-node
+    steps:
+      - checkout
+      - run: bundle install
+      - run: rspec spec
+
+  rubocop:
+    parameters:
+      ruby:
+        type: string
+    docker:
+      - image: circleci/ruby:2.6.1-stretch-node
+    steps:
+      - checkout
+      - run: bundle install
+      - run: rubocop
