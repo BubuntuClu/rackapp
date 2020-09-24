@@ -19,7 +19,7 @@ jobs:
       #Run rspec
       - run:
           name: RSpec
-          command: rspec spec
+          command: bundle exec rspec spec
 
   # rubocop:
   #   parameters:
