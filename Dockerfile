@@ -8,15 +8,3 @@ RUN bundle install
 COPY . /myapp
 
 CMD ["/bin/bash", "-c", "bundle exec exec puma -b tcp://0.0.0.0 -p 3000"]
-
-
-# RUN mkdir /myapp
-# WORKDIR /myapp
-# ADD Gemfile* /app/
-# RUN gem install bundler:2.1.4
-# RUN bundle install
-# COPY . /myapp
-
-# CMD ["/bin/bash", "-c", "bundle exec exec puma -b tcp://0.0.0.0 -p 3000"]
-
-
