@@ -5,7 +5,7 @@ require 'logger'
 class SecretFolder
   class SecretLogger
     def initialize(app, **options)
-      @logger = Logger.new(options[:logdev] || STDOUT)
+      @logger = options[:logger]
       @app = app
     end
 

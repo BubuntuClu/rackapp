@@ -34,16 +34,4 @@ describe App do
       expect(body).to eq []
     end
   end
-
-  context 'exception path' do
-    let(:request) { Rack::MockRequest.env_for('http://example.com:8080/raise_500') }
-
-    it 'returns status 500' do
-      expect(status).to eq 500
-    end
-
-    it 'returns body' do
-      expect(body).to eq []
-    end
-  end
 end

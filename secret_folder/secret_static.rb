@@ -1,5 +1,6 @@
 # frozen_string_literal: true
 
+require 'pry'
 class SecretFolder
   class SecretStatic
     def initialize(app)
@@ -17,10 +18,8 @@ class SecretFolder
     private
 
     def can_response_with_file?(path)
-      permitted_files = Dir.entries('public')
-      requested_file = path.split('/').last
-
-      permitted_files.include?(requested_file)
+      allowed_path = %w[public assets .css .js]
+      path.match(Regexp.union(allowed_path))
     end
   end
 end

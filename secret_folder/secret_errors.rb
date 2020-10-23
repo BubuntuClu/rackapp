@@ -1,5 +1,6 @@
 # frozen_string_literal: true
 
+require 'pry'
 class SecretFolder
   class SecretErrors
     def initialize(app)
