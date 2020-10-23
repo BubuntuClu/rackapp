@@ -14,6 +14,7 @@ AllCops:
 # Ignore block length in DSLs using blocks extensively
 Metrics/BlockLength:
   Exclude:
+    - spec/**/*.rb
 
 Metrics/ClassLength:
   Exclude:
@@ -109,6 +110,8 @@ RSpec/ExpectOutput:
 
 RSpec/FilePath:
   Enabled: true
+  Exclude:
+    - '**/spec/**/*.rb'
 
 RSpec/Focus:
   Enabled: true
